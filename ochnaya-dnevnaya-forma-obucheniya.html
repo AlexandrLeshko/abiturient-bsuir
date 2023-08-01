@@ -14,12 +14,12 @@
         <link rel="canonical" href="https://abitur.bsuir.by/ochnaya-dnevnaya-forma-obucheniya">
         <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
         <link rel="stylesheet" href="styles/style.css"/>    
-        <script src="scripts/jssor.slider.min.js"></script>
         <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9DLPE32Q33&amp;cx=c&amp;_slc=1"></script>
         <script async="" src="https://www.google-analytics.com/analytics.js"></script>
         <script src="scripts/common_window.js"></script>
         <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KDNXBXR"></script>
         <script src="scripts/jquery-1.11.3.min.js"></script>
+        <script src="scripts/jssor.slider.min.js"></script>
         <script src="scripts/script.js"></script>
     	<title>Электронный Абитуриент БГУИР - Очная дневная форма обучения</title>
         <script>
@@ -34,7 +34,6 @@
                         dateEl.find('ul.menu__list').each(function (index1, dateElement1) {
                             var dateEl1 = $(dateElement1);
                             var counter = dateEl1.attr("counter");
-                            //if (counter%countSTR == 0 && countSTR*flag != childrencount) {
                             if (counter>countSTR*flag) {
                                 //dateEl1.after('</div><div class="menu__wrapper">');
                                 htmlEl = htmlEl + '</div><div class="menu__wrapper"><ul class="menu__list" counter="'+counter+'">' + dateEl1.html() + '</ul>';
@@ -78,13 +77,11 @@
                     }
                 </script>
                 <form class="search-form header__search-form" action="" method="get" accept-charset="utf-8">
-                    <!-- <input class="search-form__input h4" type="text" placeholder="Поиск"> -->
                     <input type="hidden" name="resID" value="113227">
                     <input type="hidden" name="lang" value="ru">
                     <input type="hidden" name="menuItemID" value="-1">
                     <input type="hidden" name="noshow" value="1">
                     <input class="search-form__input h4" placeholder="Поиск" name="q" onclick="this.value=''" onselect="this.value=''">
-                    <!-- <input value='' name="img" class="button search-form__button" type="submit"> -->
                     <button class="button search-form__button">
                         <svg class="search-form__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <use xlink:href="imgs/icons/search_sprite.svg#search"></use>
@@ -112,12 +109,16 @@
                                 </ul>
                                 <ul class="menu__list" counter="3">
                                     <span class="menu__list-title"><a href="fakultety-i-spetsialnosti.html" target="_self">Факультеты и специальности</a></span>
-                                    <li class="menu__item">
+                                </ul>
+                                <ul class="menu__list" counter="4">
+                                    <span class="menu__list-title">
                                         <a href="ochnaya-dnevnaya-forma-obucheniya.html" target="_self">Специальности дневной формы</a>
-                                    </li>
-                                    <li class="menu__item">
+                                    </span>
+                                </ul>
+                                <ul class="menu__list" counter="5">
+                                    <span class="menu__list-title">
                                         <a href="zaochnaya-forma-obucheniya.html" target="_self">Специальности заочной формы</a>
-                                    </li>
+                                    </span>
                                 </ul>
                             </div>
                         </div>
@@ -150,7 +151,9 @@
                     </ul>
                 </div>
                 <div class="wrapper header__wrapper--mobile">
-                    <button class="button menu__btn" id="m1"><span class="menu__btn-text">Об университете<img class="menu__img" src="imgs/icons/arrow.svg"></span></button>
+                    <button class="button menu__btn" id="m1">
+                        <span class="menu__btn-text">Об университете<img class="menu__img" src="imgs/icons/arrow.svg"></span>
+                    </button>
                     <div class="menu__mobile-block hidden">
                         <ul class="menu__list menu__list--mibile">
                             <a class="menu__list-title" href="10-prichin-vybrat-bguir.html" target="_self">10 причин выбрать БГУИР</a>
@@ -168,7 +171,25 @@
                             </li>
                         </ul>
                     </div>
-                    <button class="button menu__btn" id="m2"><span class="menu__btn-text">Подготовка к поступлению<img class="menu__img" src="imgs/icons/arrow.svg"></span></button><button class="button menu__btn" id="m3"><span class="menu__btn-text">Централизованное тестирование<img class="menu__img" src="imgs/icons/arrow.svg"></span></button><button class="button menu__btn" id="m4"><span class="menu__btn-text">Приемная кампания<img class="menu__img" src="imgs/icons/arrow.svg"></span></button>
+                    <button class="button menu__btn" id="m2">
+                        <span class="menu__btn-text">Подготовка к поступлению<img class="menu__img" src="imgs/icons/arrow.svg"></span>
+                    </button>
+                    <div class="menu__mobile-block hidden">
+                        <ul class="menu__list menu__list--mibile">
+                            <a class="menu__list-title" href="#" target="_self">ПУСТАЯ ССЫЛКА</a>
+                        </ul>
+                    </div>
+                    <button class="button menu__btn" id="m3">
+                        <span class="menu__btn-text">Централизованное тестирование<img class="menu__img" src="imgs/icons/arrow.svg"></span>
+                    </button>
+                    <div class="menu__mobile-block hidden">
+                        <ul class="menu__list menu__list--mibile">
+                            <a class="menu__list-title" href="#" target="_self">ПУСТАЯ ССЫЛКА</a>
+                        </ul>
+                    </div>
+                    <button class="button menu__btn" id="m4">
+                        <span class="menu__btn-text">Приемная кампания<img class="menu__img" src="imgs/icons/arrow.svg"></span>
+                    </button>
                     <div class="menu__mobile-block hidden">
                         <ul class="menu__list menu__list--mibile">
                             <a class="menu__list-title" href="algoritm-abiturienta.html" target="_self">Алгоритм абитуриента</a>
@@ -350,104 +371,6 @@
             <p>&nbsp;</p>
             <h2 style="text-align: center;">План приема на дневную форму получения образования в 2023 году</h2>
             <p>&nbsp;</p>
-            <!-- <script>
-                $(document).ready(function() {
-                    $('div.load').load("this_variable_does_not_do_anything", function() {
-    //checkselect
-                        (function ($) {
-                            function setChecked(target) {
-                                var parent = $(target).closest('div.checkselect');
-                                var checked = $(target).find("input[type='checkbox']:checked").length;
-                                if (checked) {
-                                    $(target).find("select option:first").html("Выбрано: " + checked);
-                                    if ( parent.attr('name') == 'faculties' ) {
-                                        $(target).find('select option:first').html('Факультетов: '+ checked);
-                                    }
-                                    if ( parent.attr('name') == 'fo' ) {
-                                        $(target).find('select option:first').html('Форм обучения: '+ checked);
-                                    }
-                                } else {
-                                    if ( parent.attr('name') == 'faculties' ) {
-                                        $(target).find('select option:first').html('Факультеты');
-                                    }
-                                    if ( parent.attr('name') == 'fo' ) {
-                                        $(target).find('select option:first').html('Форма обучения');
-                                    }
-                                }
-                            }
-                            // $.fn.checkselect = function () {
-                            //     this.wrapInner('<div class="checkselect-popup"></div>');
-                            //     this.prepend('<div class="checkselect-control">' + '<select class="form-control"><option></option></select>' + '<div class="checkselect-over"></div>' + '</div>');
-                            //     this.each(function () {
-                            //         setChecked(this);
-                            //     });
-                            //     this.find('input[type="checkbox"]').click(function () {
-                            //         setChecked($(this).parents(".checkselect"));
-                            //     });
-                            // };
-                        })(jQuery);
-                        $(".checkselect").checkselect();
-    //table
-                        const tbody = document.querySelector(".table tbody");
-                        let tableRows;
-                        let tableArr = [];
-                        function getRows() {
-                            tableRows = document.querySelectorAll(".table tbody tr");
-                        }
-                        function getMatrix() {
-                            getRows();
-                            tableRows.forEach((row) => {
-                                tableArr.push(row.querySelectorAll("td"));
-                            });
-                        }
-                        function setCellAtribut() {
-                            getMatrix();
-                            tableRows.forEach((row, i) => {
-                                tableArr[i].forEach((cell, j) => {
-                                    cell.setAttribute("data-id-cell", j);
-                                });
-                            });
-                        }
-                        function checkCellNumbers(e) {
-                            setCellAtribut();
-                            tableRows.forEach((row, i) => {
-                                tableArr[i].forEach((cell) => {
-                                    if (e.target == cell) {
-                                        let x = +cell.getAttribute("data-id-cell");
-                                        deleteColorCell();
-                                        setColorCell(row, i, x);
-                                    }
-                                });
-                            });
-                        }
-                        function deleteColorCell() {
-                            tableArr.forEach((row) => {
-                                row.forEach((cell) => {
-                                    cell.classList.remove("table__row-fitu--active");
-                                    cell.classList.remove("table__row-fksis--active");
-                                    cell.classList.remove("table__row-fre--active");
-                                    cell.classList.remove("table__row-ief--active");
-                                    cell.classList.remove("table__row-fik--active");
-                                    cell.classList.remove("table__row-iit--active");
-                                    cell.classList.remove("table__row-vf--active");
-                                    cell.classList.remove("table__row-fkp--active");
-                                });
-                            });
-                        }
-                        function setColorCell(row, rowID, cellID) {
-                            if (cellID != 0) {
-                                for (let i = rowID; i >= 0; i--) {
-                                    tableArr[i][cellID].classList.add(`${row.className}--active`);
-                                }
-                                for (let i = cellID; i >= 0; i--) {
-                                    tableArr[rowID][i].classList.add(`${row.className}--active`);
-                                }
-                            }
-                        }
-                        tbody.addEventListener("mouseover", checkCellNumbers);
-                    });
-                });
-            </script> -->
             <div class="load">
                 <title>Форма заказа</title>
                 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -930,7 +853,7 @@
                     </div>
                 </div>
                 <script>
-    //table
+                    //table
                     const columnBox = document.querySelector(".table__column-blocks"), filterBox = document.querySelector(".filter"), filterBtn = filterBox.querySelector("[data-send]");
                     function columnRender() {
                         const mediaQuery = window.matchMedia("(max-width: 1000px)");
@@ -979,7 +902,7 @@
                             columnRender();
                         }
                     });
-    //tColor
+                    //tColor
                     function tColorInit() {
                         const tbody = document.querySelector(".table tbody");
                         let tableRows;
@@ -1217,15 +1140,12 @@
                         $('input#paid').prop('checked', false);
                         $('div[name=faculties]').find('input[type=checkbox]').prop('checked', false);
                         $('div[name=faculties]').find('option').html("Факультеты");
-    //$('div[name=fo]').find('option').html("Форма обучения");
                         columnRender();
                         tColorInit();
                     }
                     function sortData(thisNode, sort) {
                         var thisEl = $(thisNode);
                         $('.table__sort-icon').removeClass('table__sort-icon--active');
-    //thisEl.css('background-color', 'red');
-    //thisEl.closest('span.table__sort-icon').addClass('table__sort-icon--active');
                         thisEl.addClass('table__sort-icon--active');
                         var sortTH = thisEl.closest('th');
                         if ( sortTH.length == 0 ) {
@@ -1398,11 +1318,7 @@
                     <img src="imgs/icons/close.svg" alt="">
                 </a>
                 <div class="popup__content">
-                    <p>
-                        <!-- <p>
-                            <button class="button button--corner popup__btn">Личный кабинет</button>
-                        </p> -->
-                    </p>
+                    <p></p>
                     <ul class="popup__list">
                         <li class="popup__list-item">
                             <img class="popup__link-img" src="imgs/popup icons/spetial.svg">
@@ -1514,9 +1430,7 @@
                             </div>
                         </div>
                     </div>
-                    <p>
-                        &nbsp;
-                    </p>
+                    <p>&nbsp;</p>
                 </div>
             </div>
         </div>
